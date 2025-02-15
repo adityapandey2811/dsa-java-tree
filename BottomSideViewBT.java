@@ -16,7 +16,6 @@ class Solution {
         getBottomView(root.left,mp,colIndex-1,depth);
         if((mp.containsKey(colIndex) && mp.get(colIndex).get(1) <= depth) || !mp.containsKey(colIndex))
             mp.put(colIndex,List.of(root.data,depth));
-        // System.out.println(colIndex%5 + " " + root.data);
         getBottomView(root.right,mp,colIndex+1,depth);
         depth--;
     }
