@@ -15,3 +15,5 @@ class Solution {
         validateBST(root.right, list);
     }
 }
+
+// Review: https://leetcode.com/problems/validate-binary-search-tree/solutions/32112/learn-one-iterative-inorder-traversal-apply-it-to-multiple-tree-questions-java-solution
