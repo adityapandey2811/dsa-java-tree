@@ -1,3 +1,35 @@
+// My Solution
+class FindElements {
+    HashSet<Integer> set;
+    
+    public FindElements(TreeNode root) {
+        set = new HashSet<>();
+        root.val = 0;
+        set.add(0);
+        recover(root);
+    }
+    
+    public boolean find(int target) {
+        return set.contains(target);
+    }
+
+    public void recover(TreeNode root) {
+        if(root==null) return;
+        if(root.left != null) {
+            root.left.val = (root.val*2)+1;
+            set.add(root.left.val);
+        }
+        if(root.right != null) {
+            root.right.val = (root.val*2)+2;
+            set.add(root.right.val);
+        }
+        recover(root.left);
+        recover(root.right);
+    }
+}
+
+
+// LeetCode Solution
 class FindElements {
 
     HashSet<Integer> seen;
